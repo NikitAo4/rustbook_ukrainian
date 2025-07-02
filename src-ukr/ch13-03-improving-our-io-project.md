@@ -57,7 +57,7 @@
 
 <span class="caption">Блок коду 13-19: оновлення сигнатури `Config::build`, щоб приймала ітератор</span>
 
-The standard library documentation for the `env::args` function shows that the type of the iterator it returns is `std::env::Args`, and that type implements the `Iterator` trait and returns `String` values.
+Документація стандартної бібліотеки для функції env::args показує, що тип ітератора, який вона повертає, — це std::env::Args, і цей тип реалізує трейд Iterator та повертає значення типу String.
 
 Ми оновили сигнатуру функції `Config::build`, зробивши параметр `args` узагальненого типу з обмеженням трейту `impl Iterator<Item = String>` замість `&[String]`. Цей синтаксис `impl Trait`, який ми обговорили у підрозділі [“Трейти як параметри”][impl-trait]<!-- ignore --> Розділу 10, означає, що `args` може бути будь-якого типу, що реалізує тип `Iterator` і повертає елементи типу `String`.
 
